@@ -1,2 +1,2 @@
-# Herramientas_computacinales
+# Herramientas_computacionales
 test file for semana Tec
