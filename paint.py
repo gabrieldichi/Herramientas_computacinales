@@ -38,6 +38,7 @@ def circle(start, end):
     goto(start.x, start.y)
     down()
     begin_fill()
+    speed(0)
     for count in range(360):
         forward((end.x-start.x)/100)#circ
         left(1)
@@ -87,6 +88,9 @@ state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
+onkey(lambda: pensize(1),'S')
+onkey(lambda: pensize(5),'M')
+onkey(lambda: pensize(10),'L')
 onkey(undo, 'u')
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
