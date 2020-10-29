@@ -13,7 +13,7 @@ Exercises
 from random import choice
 from turtle import *
 from freegames import floor, vector
-gspeed =int(input('choose the speed of the ghosts in the game (pick a number form 5 to 20): '))
+gspeed =int(input('Choose the speed of the ghosts in the game (pick a number form 5 to 20,the higher,the greater the number, the speed will also be): '))
 
 state = {'score': 0}
 path = Turtle(visible=False)
