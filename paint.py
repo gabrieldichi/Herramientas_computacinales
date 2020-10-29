@@ -28,18 +28,38 @@ def square(start, end):
     begin_fill()
 
     for count in range(4):
-        forward(end.x - start.x)
+        forward(end.x -  start.x)#cuadr
+        left(90) 
+    end_fill()
+
+def circle(start, end):
+    "dibujar el círculo de incio a fin."
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    for count in range(360):
+        forward((end.x-start.x)/100)#circ
+        left(1)
+    end_fill()
+    
+
+def rectangle(start, end):
+    "Draw rectangle from start to end."
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(2):
+        forward(end.x, start.x)
+        left(90)
+        forward((end.x)*2 - (start.x)*2)
         left(90)
 
     end_fill()
 
-def circle(start, end):
-    "Draw circle from start to end."
-    pass  # TODO
-
-def rectangle(start, end):
-    "Draw rectangle from start to end."
-    pass  # TODO
+   	
 
 def triangle(start, end):
     "Draw triangle from start to end."
@@ -60,6 +80,8 @@ def tap(x, y):
 def store(key, value):
     "Store value in state at key."
     state[key] = value
+
+
 
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
