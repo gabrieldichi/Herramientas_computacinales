@@ -8,7 +8,7 @@ Exercises
 4. Change the snake to respond to arrow keys.
 
 """
-
+import random
 from turtle import *
 from random import randrange
 from freegames import square, vector
@@ -16,6 +16,9 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+colors  = ["green","blue","orange","purple","pink","yellow"]
+color = random.choice(colors)
+color2 = random.choice(colors)
 
 def change(x, y):
     "Change snake direction."
@@ -48,9 +51,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, color)
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, color2)
     update()
     ontimer(move, 100)
 
