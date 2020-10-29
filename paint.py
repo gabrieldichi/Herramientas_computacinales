@@ -33,7 +33,7 @@ def square(start, end):
     end_fill()
 
 def circle(start, end):
-    "dibujar el círculo de incio a fin."
+    "Draw circle from start to end."
     up()
     goto(start.x, start.y)
     down()
@@ -88,16 +88,20 @@ state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
+"width size selection"
 onkey(lambda: pensize(1),'S')
 onkey(lambda: pensize(5),'M')
 onkey(lambda: pensize(10),'L')
 onkey(undo, 'u')
+
+"fig color"
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color ('yellow'),'Y')
 onkey(lambda: color('red'), 'R')
+"fig shape"
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
