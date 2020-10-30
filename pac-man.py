@@ -1,18 +1,18 @@
-"""Pacman, classic arcade game.
+"""Pacman, classic arcade game with board, color and other modifications
 
-Exercises
+Gabriel Dichi
+Sebastian Joya
+Maximiliano Carrasco
 
-1. Change the board.
-2. Change the number of ghosts.
-3. Change where pacman starts.
-4. Make the ghosts faster/slower.
-5. Make the ghosts smarter.
+30/10/2020
 
+"""
 """
 
 from random import choice
 from turtle import *
 from freegames import floor, vector
+gspeed =int(input('Choose the speed of the ghosts in the game (pick a number form 5 to 20,the higher,the greater the number, the speed will also be): '))
 state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
@@ -133,10 +133,10 @@ def move():
             point.move(course)
         else:
             options = [
-                vector(5, 0),
-                vector(-5, 0),
-                vector(0, 5),
-                vector(0, -5),
+                vector(gspeed, 0),
+                vector(-gspeed, 0),
+                vector(0, gspeed),
+                vector(0, -gspeed),
             ]
             plan = choice(options)
             course.x = plan.x
