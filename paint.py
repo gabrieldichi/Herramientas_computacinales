@@ -53,25 +53,12 @@ def rectangle(start, end):
     begin_fill()
 
     for count in range(2):
-<<<<<<< HEAD
-        forward(end.x, start.x)
-        left(90)
-        forward((end.x)*2 - (start.x)*2)
-        left(90)
 
-    end_fill()
 
-   	
-=======
-        forward(end.x - start.x)
-        left(90)
-        forward((end.x) - (start.x)*2)
-        left(90)
 
-    end_fill()
-    
-    pass # TODO
->>>>>>> origin/gabriel
+
+
+
 
 def triangle(start, end):
     "Draw triangle from start to end."
