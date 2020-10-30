@@ -12,8 +12,8 @@ Exercises
 from turtle import *
 from random import randrange
 from freegames import square, vector
-
-food = vector(0, 0)
+speed=int(input('Please Write a number from 0 to 100 to chosee speed (while closer to the number 0, the speed would increase: '))
+food = vector(0,0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
@@ -51,16 +51,18 @@ def move():
         square(body.x, body.y, 9, 'black')
 
     square(food.x, food.y, 9, 'green')
+    
+    
     update()
-    ontimer(move, 100)
+    ontimer(move, speed)
 
-setup(420, 420, 370, 0)
+setup(420, 420, 370,0)
 hideturtle()
 tracer(False)
 listen()
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
-onkey(lambda: change(0, 10), 'Up')
+onkey(lambda: change(0,10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
 done()

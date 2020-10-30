@@ -64,6 +64,7 @@ def rectangle(start, end):
 
 def triangle(start, end):
     "Draw triangle from start to end."
+    "It will draw a equilateral triangule"
     up()
     goto(start.x,start.y)
     down()
