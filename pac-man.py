@@ -7,8 +7,6 @@ Maximiliano Carrasco
 30/10/2020
 
 """
-"""
-
 from random import choice
 from turtle import *
 from freegames import floor, vector
@@ -144,7 +142,7 @@ def move():
 
         up()
         goto(point.x + 10, point.y + 10)
-        dot(20, 'red')
+        dot(16, 'red')
 
     update()
 
@@ -174,3 +172,4 @@ onkey(lambda: change(0, -5), 'Down')
 world()
 move()
 done()
+ 
