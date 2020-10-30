@@ -47,13 +47,6 @@ def circle(start, end):
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
-    up()
-    goto(start.x, start.y)
-    down()
-    begin_fill()
-
-    for count in range(2):
-
 
 
 
