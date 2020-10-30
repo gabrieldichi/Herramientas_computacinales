@@ -1,12 +1,10 @@
-"""Paint, for drawing shapes.
+"""Paint, for drawing shapes and change width, color, shape.
 
-Exercises
+Maximiliano Carrasco
+Gabriel Dichi
+Sebastian Joya
 
-1. Add a color.
-2. Complete circle.
-3. Complete rectangle.
-4. Complete triangle.
-5. Add width parameter.
+30/10/2020
 
 """
 
@@ -32,8 +30,9 @@ def square(start, end):
         left(90) 
     end_fill()
 
+
 def circle(start, end):
-    "dibujar el círculo de incio a fin."
+    "Draw circle from start to end."
     up()
     goto(start.x, start.y)
     down()
@@ -47,11 +46,18 @@ def circle(start, end):
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
 
+    for count in range(2):
+        forward(end.x - start.x)
+        left(90)
+        forward((end.x) - (start.x)*2)
+        left(90)
 
-
-
-
+    end_fill()
 
 def triangle(start, end):
     "Draw triangle from start to end."
@@ -90,16 +96,20 @@ state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
 listen()
+"width size selection"
 onkey(lambda: pensize(1),'S')
 onkey(lambda: pensize(5),'M')
 onkey(lambda: pensize(10),'L')
 onkey(undo, 'u')
+
+"fig color"
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color ('yellow'),'Y')
 onkey(lambda: color('red'), 'R')
+"fig shape"
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')

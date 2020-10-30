@@ -1,14 +1,13 @@
-"""Snake, classic arcade game.
+"""Snake, classic arcade game with different modifications
 
-Exercises
+Sebastin Joya
+Maximiliano Carrasco
+Gabriel Dichi
 
-1. How do you make the snake faster or slower?
-2. How can you make the snake go around the edges?
-3. How would you move the food?
-4. Change the snake to respond to arrow keys.
+30/10/2020
 
 """
-
+import random
 from turtle import *
 from random import randrange
 from freegames import square, vector
@@ -28,8 +27,9 @@ def inside(head):
 
 def move():
     "Move snake forward one segment."
-    head = snake[-1].copy()
+    head= snake[-1].copy()
     head.move(aim)
+    i=0
 
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
@@ -54,15 +54,20 @@ def move():
     
     
     update()
+
     ontimer(move, speed)
+
 
 setup(420, 420, 370,0)
 hideturtle()
 tracer(False)
 listen()
-onkey(lambda: change(10, 0), 'Right')
-onkey(lambda: change(-10, 0), 'Left')
-onkey(lambda: change(0,10), 'Up')
-onkey(lambda: change(0, -10), 'Down')
+
+"Snake move with alternative keys"
+onkey(lambda: change(10, 0), 'd')
+onkey(lambda: change(-10, 0), 'a')
+onkey(lambda: change(0, 10), 'w')
+onkey(lambda: change(0, -10), 's')
+
 move()
 done()
